@@ -1,9 +1,23 @@
 // language setter 
+const languageBtnActive = document.querySelector('.language');
+const languageList = document.querySelector('.dropdown-options');
+
 const languageBtn = document.querySelector('[data-translate="language"]');
 const options = document.querySelectorAll('.dropdown-options li');
 const elements = document.querySelectorAll('[data-translate]');
 let lang;
 
+// click on language btn
+languageBtnActive.addEventListener('click', function (e) {
+    languageList.classList.add('show');
+    e.stopPropagation();
+
+})
+document.addEventListener('click', (event) => {
+    if (languageList.classList.contains('show')) {
+        languageList.classList.remove('show');
+    }
+});
 
 // check and save prefered language on local storage
 let selectedLanguage = localStorage.getItem('language');
@@ -123,11 +137,13 @@ languageUpdateter();
 
 // choose language on menu
 options.forEach((option) => {
-    option.addEventListener('click', () => {
+    option.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageList.classList.remove('show');
+        console.log(languageList);
         languageBtn.innerHTML = option.textContent;
         languageUpdateter();
         localStorage.setItem('language', option.textContent.toLowerCase());
-
     });
 });
 
