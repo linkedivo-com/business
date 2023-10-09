@@ -163,16 +163,21 @@ body {
           color: #0074E1; }
   .main-business .business-info {
     padding: 25px;
-    width: 100%; }
+    margin: 25px;
+    width: 100%;
+    border-radius: 25px;
+    height: 200px;
+    display: flex;
+    justify-content: start;
+    align-items: center; }
+    .main-business .business-info img {
+      width: 120px;
+      object-fit: cover;
+      object-position: center; }
     .main-business .business-info h2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-size: 20px;
       font-weight: 400;
-      height: 200px;
-      padding: 25px;
-      border-radius: 25px; }
+      padding: 25px; }
 
 .selected {
   color: #0074E1; }
