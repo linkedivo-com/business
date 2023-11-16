@@ -1,25 +1,25 @@
-@import 'abstracts/colors';
-@import 'abstracts/variables';
+@import "abstracts/colors";
+@import "abstracts/variables";
 
-@import 'base/base';
-@import 'base/typography';
+@import "base/base";
+@import "base/typography";
 
-@import 'components/business-cards';
-@import 'components/button';
-@import 'components/search-field';
+@import "components/business-cards";
+@import "components/button";
+@import "components/search-field";
 
-@import 'pages/contact';
-@import 'pages/main';
-@import 'pages/business';
-@import 'pages/explorer.scss';
+@import "pages/contact";
+@import "pages/main";
+@import "pages/business";
+@import "pages/explorer.scss";
 
-@import 'layouts/footer';
-@import 'layouts/header';
-@import 'layouts/login';
-@import 'layouts/signup';
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/login";
+@import "layouts/signup";
 
-@import 'responsive/media-1024px';
-@import 'responsive/media-800px';
-@import 'responsive/media-500px';
+@import "responsive/media-1024px";
+@import "responsive/media-800px";
+@import "responsive/media-500px";
 
-@import 'utilities/master'
+@import "utilities/master";

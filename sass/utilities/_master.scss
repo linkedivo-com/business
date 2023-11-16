@@ -1,12 +1,17 @@
 .selected {
-    color: $primary-color;
+  color: $primary-color;
 }
 
-
 .hide {
-    display: none;
+  display: none;
 }
 
 .show {
-    display: flex;
+  display: flex;
+}
+
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.063) 0px 1px 4px;
+  padding: 30px;
+  border-radius: 20px;
 }

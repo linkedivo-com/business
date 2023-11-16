@@ -1,0 +1,28 @@
+@media (max-width: 1024px) {
+  // header
+  .header-business {
+    .header-content {
+      .header-tools {
+        .header-qr-code {
+          display: none;
+        }
+      }
+    }
+    .header-nav {
+      margin: 15px 0;
+      ul {
+        margin: 0 100px;
+        li {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  // footer
+  .footer-business {
+    .footer-nav {
+      padding: 15px 150px;
+    }
+  }
+}
