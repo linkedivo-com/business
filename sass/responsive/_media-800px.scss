@@ -2,6 +2,13 @@
   // header
 
   .header-business {
+    // .header-nav {
+    //   padding: 15px 90px;
+    // }
+  }
+
+  // main contacts  .main-contacts {
+  .main-business {
     .header-content {
       padding: 20px;
       display: flex;
@@ -27,7 +34,7 @@
       }
     }
 
-    .header-nav {
+    .business-nav {
       ul {
         margin: 0 50px;
         li {
@@ -35,18 +42,12 @@
         }
       }
     }
-  }
-
-  // main contacts  .main-contacts {
-  .main-contacts {
     .contact-info {
       grid-template-columns: repeat(1, 1fr) !important;
     }
   }
+
   // footer
   .footer-business {
-    .footer-nav {
-      padding: 15px 90px;
-    }
   }
 }

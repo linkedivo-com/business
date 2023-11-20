@@ -2,6 +2,12 @@
   // header
 
   .header-business {
+    // .header-nav {
+    //   padding: 15px 60px;
+    // }
+  }
+
+  .main-business {
     .header-content {
       flex-direction: column;
 
@@ -32,7 +38,7 @@
       }
     }
 
-    .header-nav {
+    .business-nav {
       margin: 0;
       ul {
         margin: 0 20px;
@@ -45,8 +51,5 @@
 
   // footer
   .footer-business {
-    .footer-nav {
-      padding: 15px 60px;
-    }
   }
 }

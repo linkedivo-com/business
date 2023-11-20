@@ -1,6 +1,13 @@
 @media (max-width: 1024px) {
   // header
   .header-business {
+    // .header-nav {
+    //   padding: 15px 150px;
+    // }
+  }
+
+  // main
+  .main-business {
     .header-content {
       .header-tools {
         .header-qr-code {
@@ -8,7 +15,7 @@
         }
       }
     }
-    .header-nav {
+    .business-nav {
       margin: 15px 0;
       ul {
         margin: 0 100px;
@@ -21,8 +28,5 @@
 
   // footer
   .footer-business {
-    .footer-nav {
-      padding: 15px 150px;
-    }
   }
 }

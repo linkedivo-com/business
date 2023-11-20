@@ -1,0 +1,84 @@
+{
+  "info": {
+    "defaultLang": "true",
+    "direction": "ltr",
+    "language": "en",
+    "referral": "ivo-7",
+    "ivoCode": "ivo-1000",
+    "ivoQRCode": "https://linkedivo.com/linkedivo/images/ivo-1000.svg",
+    "id": "1000",
+    "userName": "linkedivo",
+    "name": "linkedivo",
+    "slogan": "where connection happen",
+    "metaDescription": "Linkedivo is a revolutionary business networking platform designed to connect businesses and individuals, offering a simple and efficient way to find their needs and connect with like-minded professionals. Our platform serves as a comprehensive hub, facilitating seamless collaborations and unlocking new opportunities for growth and success.",
+    "country": "canada",
+    "province": "ontario",
+    "city": "Ottawa",
+    "url": "https://linkedivo.com",
+    "logo": "https://linkedivo.com/linkedivo/images/logo.svg"
+  },
+  "overview": {
+    "summary": "Linkedivo is a revolutionary business networking platform designed to connect businesses and individuals, offering a simple and efficient way to find their needs and connect with like-minded professionals. Our platform serves as a comprehensive hub, facilitating seamless collaborations and unlocking new opportunities for growth and success.",
+    "mission": "Our mission is to provide a user-friendly platform that streamlines business connections, making it simple for users to discover and connect with businesses. We strive to create an environment where individuals and organizations can easily find their needs, form strategic partnerships, and unlock new opportunities for growth and success.",
+    "vision": "To create a business networking platform that simplifies connections, making it effortless for individuals and organizations to find and partner with businesses. We envision a global hub where finding the right solutions and forging valuable partnerships is easy, empowering businesses to thrive and grow.",
+    "values": "Simplification: We are dedicated to simplifying the process of business connections, eliminating complexities, and providing a seamless experience for users to easily find and connect with the right businesses.Accessibility: We believe in creating an inclusive platform that is accessible to users from all backgrounds, locations, and industries.Our aim is to connect businesses and individuals globally, regardless of their geographical location. Empowerment: We empower users by equipping them with the necessary tools, resources, and insights to make informed decisions and form meaningful partnerships that drive their businesses forward. Trust and Transparency: We foster an environment of trust and transparency, ensuring businesses present themselves accurately and users can rely on authentic information to make connections that align with their needs and goals. Innovation: We embrace innovation to continuously enhance our platform, leveraging emerging technologies and user feedback to provide an evolving and cutting- edge experience that meets the ever- changing demands of business networking."
+  },
+  "services": {
+    "service1": {
+      "title": "service 1 title",
+      "description": "service 1 description",
+      "image": "https://linkedivo.com/linkedivo/images/service-1.png"
+    },
+    "service2": {
+      "title": "service 2 title",
+      "description": "service 2 description",
+      "image": "https://linkedivo.com/linkedivo/images/service-2.png"
+    }
+  },
+  "contacts": {
+    "address": "Number 24, innovation street, Toronto, Canada",
+    "Phone": "+1 213 772 0805",
+    "email": "info@linkedivo.com",
+    "website": "www.linkedivo.com",
+    "socialMedia": {
+      "linkedivo": "https://linkedivo.com/linkedivo",
+      "instagram": "https://instagram.com/linkedivo",
+      "facebook": "https://facebook.com/linkedivo",
+      "linkedin": "https://linkedin.com/linkedivo",
+      "whatsapp": "https://wa.me/+96891711527",
+      "telegram": "https://t.me/+96891711527",
+      "youtube": "https://youtube.com/linkedivo",
+      "twitter": "https://x.com/linkedivo"
+    }
+  },
+  "gallery": {
+    "project1": {
+      "title": "service 1 title",
+      "description": "service 1 description",
+      "image": "https://linkedivo.com/linkedivo/images/service-1.png"
+    },
+    "project2": {
+      "title": "service 2 title",
+      "description": "service 2 description",
+      "image": "https://linkedivo.com/linkedivo/images/service-2.png"
+    }
+  },
+  "moreInfo": {
+    "moreInfo1": {
+      "title": "Download Company Profile 1",
+      "link": "www.linkedivo.com/linkedivo/companyprofile1.pdf",
+      "description": "service 1 description",
+      "image": "https://linkedivo.com/linkedivo/images/service-1.png"
+    },
+    "moreInfo2": {
+      "title": "Download Company Profile2",
+      "link": "www.linkedivo.com/linkedivo/companyprofile2.pdf",
+      "description": "service 2 description",
+      "image": "https://linkedivo.com/linkedivo/images/service-2.png"
+    }
+  },
+  "categories": {
+    "IT": ["programming", "web design"],
+    "Marketing": ["Digital Marketing", "Advertisement", "printing"]
+  }
+}
