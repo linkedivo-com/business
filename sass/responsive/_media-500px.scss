@@ -49,6 +49,13 @@
     }
   }
 
+  .explorer-main-business {
+    // business explorer
+    .business-lists {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
   // footer
   .footer-business {
   }

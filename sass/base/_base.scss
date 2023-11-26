@@ -1,21 +1,35 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 p {
-    line-height: 1.7;
+  line-height: 1.7;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 li,
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+body {
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  background: $light-color;
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

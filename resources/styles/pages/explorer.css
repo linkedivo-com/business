@@ -1,0 +1,96 @@
+.main-business {
+  padding: 25px; }
+  .main-business .explorer-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .main-business .explorer-title h2 {
+      font-size: 45px;
+      margin: 20px 0; }
+    .main-business .explorer-title .explorer-favorite {
+      padding: 0 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: 0.5s;
+      cursor: pointer; }
+      .main-business .explorer-title .explorer-favorite:hover {
+        transform: scale(1.1); }
+      .main-business .explorer-title .explorer-favorite i {
+        padding: 5px; }
+  .main-business .explorer-search-field {
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    cursor: pointer;
+    grid-gap: 15px; }
+    .main-business .explorer-search-field .explorer-filter {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px; }
+      .main-business .explorer-search-field .explorer-filter .filter-card {
+        width: 100%;
+        display: flex;
+        padding: 15px;
+        align-items: center;
+        justify-content: space-between; }
+        .main-business .explorer-search-field .explorer-filter .filter-card i {
+          padding-left: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+    .main-business .explorer-search-field input {
+      width: 100%;
+      outline: none;
+      border: none;
+      border-radius: 15px;
+      padding: 15px; }
+      .main-business .explorer-search-field input::placeholder {
+        font-size: 14px;
+        font-family: Poppins; }
+  .main-business .business-lists {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); }
+    .main-business .business-lists .explorer-business-card {
+      display: flex;
+      flex-direction: column;
+      position: relative; }
+      .main-business .business-lists .explorer-business-card .explorer-profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px; }
+        .main-business .business-lists .explorer-business-card .explorer-profile .explorer-logo img {
+          width: 120px; }
+        .main-business .business-lists .explorer-business-card .explorer-profile .explorer-title {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          padding: 15px; }
+      .main-business .business-lists .explorer-business-card p {
+        width: 100%;
+        text-align: justify;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        /* Adjust this number to the number of lines to be shown */
+        text-overflow: ellipsis; }
+      .main-business .business-lists .explorer-business-card .explorer-country {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 12px;
+        opacity: 70%; }
+      .main-business .business-lists .explorer-business-card .explorer-button {
+        width: 100%;
+        display: flex;
+        align-items: center; }
+        .main-business .business-lists .explorer-business-card .explorer-button button {
+          width: 100%; }

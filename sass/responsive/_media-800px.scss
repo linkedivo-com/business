@@ -47,6 +47,22 @@
     }
   }
 
+  .explorer-main-business {
+    // business explorer
+    .explorer-title {
+      flex-direction: column;
+      h2 {
+        font-size: 35px;
+      }
+    }
+    .explorer-search-field {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .business-lists {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   // footer
   .footer-business {
   }
