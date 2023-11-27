@@ -22,32 +22,6 @@ window.onload = function () {
   loader.style.display = "none";
 };
 
-// page routing
-// async function renderPage(pathname) {
-//     const isValid = await businessUsernamesChecker(pathname);
-//     if (isValid) {
-//         console.log("Business Name : " + pathname.split(`/`)[1]);
-//         // businessUsernamesChecker(pathname);
-//         username = 'navan';
-//         fetchBusinessInformation();
-//     }
-
-//     const app = document.getElementById('app');
-//     switch (pathname) {
-//         case '/':
-//             app.innerHTML = '<h1>Welcome to Home Page</h1>';
-//             break;
-//         case '/navan':
-//             app.innerHTML = '<h1>Welcome to navan Page</h1>';
-//             // app.innerHTML = '<h1>Explorer Page</h1>';
-//             break;
-//         // Add more cases for other paths
-
-//         default:
-//             app.innerHTML = '<h1>404 - Not Found</h1>';
-//     }
-
-// }
 
 async function renderPage(pathname) {
   switch (pathname) {
@@ -929,7 +903,7 @@ async function businessUsernamesChecker(urlName) {
       if (isValid) {
         fetchBusinessInformation();
       } else {
-        app.innerHTML = "<h1>404 - Not Found</h1>";
+        app.innerHTML = "<h5>Page Not Found   |   Error 404   |   Code-012</h5>";
         console.log("code for 404 is here");
       }
     } else {

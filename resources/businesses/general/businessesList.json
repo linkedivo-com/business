@@ -34,5 +34,17 @@
     "logo": "/resources/businesses/ies/images/ies-logo.png",
     "categories": "IT,programming,web design",
     "metaDescription": "At IES, we're not just a digital marketing agency; we're your dedicated partner in achieving digital success."
+  },
+  "id1004": {
+    "id": "1004",
+    "userName": "learnivo",
+    "name": "learnivo",
+    "title": "Learning management system",
+    "slogan": "Unlocking Potential, Empowering Futures",
+    "country": "iran",
+    "city": "tehran",
+    "logo": "/resources/businesses/learnivo/images/learnivo-logo.png",
+    "categories": "lms,Training",
+    "metaDescription": "At Learnivo, dive into a world of comprehensive online learning, specializing in programming, robotics, and language training. Empower yourself with cutting-edge courses, personalized experiences, and a vibrant community. Start your journey towards mastery today."
   }
 }
