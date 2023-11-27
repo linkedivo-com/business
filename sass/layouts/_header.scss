@@ -1,0 +1,49 @@
+// header
+.header-business {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  .header-nav {
+    width: 100%;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $mid-color;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px -1px 3px 1px;
+    background: $dark-color;
+    li {
+      cursor: pointer;
+      font-size: 12px;
+      color: $light-color;
+      border: 1px solid $light-color;
+      border-radius: 10px;
+      transition: 0.5s;
+      overflow: hidden;
+      a {
+        display: block;
+        padding: 5px 10px;
+      }
+      &:hover {
+        border: 1px solid transparent;
+        // color: $primary-color;
+        background: $primary-color;
+      }
+    }
+    i {
+      font-size: 16px;
+      margin: 0px 10px;
+    }
+    img {
+      cursor: pointer;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      height: 25px;
+      width: auto;
+    }
+  }
+}

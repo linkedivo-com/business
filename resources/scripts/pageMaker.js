@@ -565,7 +565,7 @@ function explorerPageMaker() {
   app.innerHTML = `
     <!-- main -->
     <main class="explorer-main-business" id="main-business">
-      <div class="explorer-title">
+      <div class="explorer-title-heading">
         <h2>Business Explorer</h2>
        <!--  <div class="explorer-favorite">
           <i class="fa fa-bookmark"></i>
@@ -597,8 +597,8 @@ function explorerPageMaker() {
             <div class="dropdown-content box-shadow"> </div>
           </div>
         </div>
-
-        <input type="search" placeholder="Search..." />
+        
+        <input class="search-box box-shadow" type="search" placeholder="Search..." />
       </div>
 
 
