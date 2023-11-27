@@ -15,6 +15,8 @@ let categories = [];
 let searchFilter = "";
 let defaultBusinessCards;
 let defaultCheckBox;
+let categoriesDrobDownVar;
+let locationsDrobDownVar;
 // page loader
 window.onload = function () {
   loader.style.display = "none";
@@ -50,7 +52,7 @@ window.onload = function () {
 async function renderPage(pathname) {
   switch (pathname) {
     case "/":
-      app.innerHTML = "<h1>Welcome to Home Page</h1>";
+      homePage();
       break;
     case "/businesses-explorer":
       fetchBusinessExplorer();
@@ -58,7 +60,7 @@ async function renderPage(pathname) {
     // Add more cases for other paths
     default:
       await businessUsernamesChecker(pathname);
-      app.innerHTML = "<h1>404 - Not Found</h1>";
+    // app.innerHTML = "<h1>404 - Not Found</h1>";
   }
 }
 
@@ -224,6 +226,9 @@ function businessPageMaker() {
   const gallery = document.querySelector(`.main-gallery`);
   const moreInfo = document.querySelector(`.main-more-info`);
 
+  const addToContact = document.querySelector(`.fa-user-plus`);
+
+
   metaDescription.setAttribute("content", businessInfo.info.metaDescription);
   document.title = `${businessInfo.info.name} | ${businessInfo.info.slogan}`;
 
@@ -252,8 +257,23 @@ function businessPageMaker() {
   );
   headerQrCode.setAttribute("alt", `${businessInfo.info.name} QR code`);
 
+  addToContactFunc(addToContact, businessInfo.info.name, businessInfo.info.email, `https://linkedivo.com/${businessInfo.info.userName}`, businessInfo.info.phone);
+
+  const modalShareLink = document.querySelector(`.fa-share-alt`);
+  modalShareLink.addEventListener('click', function () {
+    modalShareInfoHandler(`https://linkedivo.com/${businessInfo.info.userName}`);
+  });
+
+  const bookmark = document.querySelector(`.fa-bookmark`);
+  bookmark.addEventListener('click', function () {
+    notification('This option will be available in next version');
+  })
+
+
+
   // header business navigation bar
   businessNavMaker();
+
 
   // body //////////////////////////////////////////////////////
   // overview
@@ -434,7 +454,7 @@ function businessPageMaker() {
   });
 }
 
-// header nav maker
+// header nav business maker
 function businessNavMaker() {
   // variables
   const navOverview = document.querySelector(`.nav-overview`);
@@ -567,12 +587,7 @@ function explorerPageMaker() {
     <main class="explorer-main-business" id="main-business">
       <div class="explorer-title-heading">
         <h2>Business Explorer</h2>
-       <!--  <div class="explorer-favorite">
-          <i class="fa fa-bookmark"></i>
-          Favorite List
-        </div>
-        -->
- <div class="explorer-search-field">
+        <div class="explorer-search-field">
         <div class="explorer-filter">
           <div class="filter-country box-shadow filter-card">
             <div  class="filter-selector">
@@ -598,7 +613,7 @@ function explorerPageMaker() {
           </div>
         </div>
         
-        <input class="search-box box-shadow" type="search" placeholder="Search..." />
+        <input class="search-box box-shadow" type="text" placeholder="Search..." />
       </div>
 
 
@@ -649,6 +664,8 @@ function explorerPageMaker() {
     `.filter-category .dropdown-content `
   );
 
+  const searchBox = document.querySelector(`.search-box`);
+  searchBox.value = searchFilter;
 
   const filterCardsToggeler = document.querySelectorAll(".filter-card .filter-selector ");
   // add businesses to explorer page
@@ -687,6 +704,9 @@ function explorerPageMaker() {
     filterUpdater(defaultBusinessCards, defaultCheckBox, searchFilter);
   });
 
+  filterUpdater(allBusinessesCard, defaultCheckBox, searchFilter);
+
+
   // add event click for explore more
   allBusinessesCard.forEach(element => {
     element.querySelector(`.explorer-button`).addEventListener('click', function (e) {
@@ -697,8 +717,7 @@ function explorerPageMaker() {
   })
 
   // function filter drop down maker
-  let categoriesDrobDownVar;
-  let locationsDrobDownVar;
+
   // set categories
   async function fetchCategories() {
     let data;
@@ -780,6 +799,7 @@ function explorerPageMaker() {
         defaultCheckBox = e.target;
         filterUpdater(defaultBusinessCards, defaultCheckBox, searchFilter);
         filterTitleUpdater(filterCheckBox, filterTitleName);
+        filterDropdownCityUpdater();
       })
     })
   }
@@ -842,6 +862,57 @@ function explorerPageMaker() {
     }
   });
 }
+
+
+// function homepage Maker
+function homePage() {
+  app.innerHTML = `
+ <main class="home-main-business" id="main-business">
+      <div class="home-logo">
+        <img
+          src="resources/images/linkedivo-logo-dark.svg"
+          alt="Linkedivo logo"
+        />
+      </div>
+      <div class="home-search">
+        <form action="#" class="home-form-explore">
+          <i class="fa fa-search"></i>
+          <input type="search" placeholder="Type here..." />
+          <button>Explore</button>
+        </form>
+      </div>
+            <h1 class="home-slogan">Where connection Happen</h1>
+
+    </main>`;
+
+
+  const homeFormSubmit = document.querySelector(`.home-form-explore`);
+  const homeExploreButton = document.querySelector(`.home-search button`);
+  const searchFieldHome = document.querySelector(`.home-form-explore input`)
+
+  homeExploreButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    searchFilter = searchFieldHome.value;
+    history.pushState(null, null, `/businesses-explorer`);
+    renderPage(`/businesses-explorer`);
+  })
+
+  homeFormSubmit.addEventListener('submit', function (e) {
+    e.preventDefault();
+    searchFilter = searchFieldHome.value;
+
+    console.log(searchFieldHome.value);
+    console.log(searchFilter);
+    history.pushState(null, null, `/businesses-explorer`);
+    renderPage(`/businesses-explorer`);
+  })
+  searchFieldHome.focus();
+
+
+}
+
+
+
 
 //business username validity checker
 async function businessUsernamesChecker(urlName) {
@@ -956,7 +1027,6 @@ function filterUpdater(defaultBusinessCards, defaultCheckBox, searchInput) {
 
   businessCards.forEach(element => {
     if (getComputedStyle(element).display !== 'none') {
-      console.log('Display is not none for:', element);
       const name = element.dataset.name.toLowerCase();
       const matchName = name.includes(searchField);
       if (matchName) {
@@ -1024,5 +1094,135 @@ function filterTitleUpdater(checkboxes, filterTitle) {
   })
 
 }
+
+
+
+// City filter dropdown updater 
+function filterDropdownCityUpdater() {
+  const filterCity = document.querySelector(`.filter-city .dropdown-content`)
+  // console.log(countries);
+  // console.log(locationsDrobDownVar.countries[0].slug);
+  // console.log(locationsDrobDownVar);
+  filterCity.innerHTML = ``;
+  locationsDrobDownVar.countries.forEach((key, index) => {
+    countries.forEach(element => {
+      if (element === locationsDrobDownVar.countries[index].slug) {
+        locationsDrobDownVar.countries[index].subcategories.forEach((elem, ind) => {
+          filterCity.innerHTML += `
+              <label>
+                <span > ${locationsDrobDownVar.countries[index].subcategories[ind].title}</span>
+                <input type="checkbox" value="${locationsDrobDownVar.countries[index].subcategories[ind].slug}" data-type="city">
+              </label>  `;
+        })
+      }
+    })
+  })
+
+  if (countries.length === 0) {
+    locationsDrobDownVar.countries.forEach((key, index) => {
+      locationsDrobDownVar.countries[index].subcategories.forEach((elem, ind) => {
+        filterCity.innerHTML += `
+              <label>
+                <span > ${locationsDrobDownVar.countries[index].subcategories[ind].title}</span>
+                <input type="checkbox" value="${locationsDrobDownVar.countries[index].subcategories[ind].slug}" data-type="city">
+              </label>  `;
+      })
+    })
+  }
+
+}
+
+
+// add to contact vCard function - vCard Maker
+function addToContactFunc(addToContact, vName, vEmail, vWebsite, vPhone) {
+  addToContact.addEventListener('click', () => {
+
+    const sanitizedName = vName.replace(/[<>:"/\\|?*]/g, '');
+    const filename = sanitizedName.substring(0, 255);
+
+    const contact = {
+      name: filename,
+      email: vEmail,
+      phoneNumber: vPhone,
+      website: vWebsite
+    };
+
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:${contact.name}
+EMAIL:${contact.email}
+TEL:${contact.phoneNumber}
+URL:${contact.website}
+END:VCARD`;
+
+
+    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = filename + '.vcf';
+    ;
+    link.click();
+  });
+}
+
+
+// logo event listener
+const navLogoLink = document.querySelector(`.nav-logo`);
+navLogoLink.addEventListener('click', function () {
+  history.pushState(null, null, `/`);
+  renderPage(`/`);
+})
+
+
+
+
+// modal share info function ////////////////////////////////////
+// Get the modal and the buttons
+function modalShareInfoHandler(link) {
+
+  const modal = document.getElementById('myModal');
+  const modalContent = document.querySelector('.modal-content input');
+  const closeBtn = document.getElementsByClassName('close')[0];
+  const copyBtn = document.getElementById('copyBtn');
+  const copyLinkInput = document.getElementById('copyLinkInput');
+
+
+  modal.style.display = 'flex';
+  modalContent.value = link;
+
+  // Close the modal when the '×' button is clicked
+  closeBtn.onclick = function () {
+    modal.style.display = 'none';
+  };
+
+  // Close the modal if clicked outside of it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+
+  // Copy link to clipboard when the 'Copy Link' button is clicked
+  copyBtn.onclick = function () {
+    copyLinkInput.select();
+    document.execCommand('copy');
+    modal.style.display = 'none';
+    notification("Link copied!");
+  };
+
+
+}
+
+// notification function
+const notif = document.querySelector('.notifications')
+function notification(message) {
+  notif.innerHTML = message;
+  notif.style.display = 'flex';
+  setInterval(() => {
+    notif.style.display = 'none'
+  }, 2000);
+}
+
 
 // live-server --entry-file=index.html

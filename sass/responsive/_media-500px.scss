@@ -56,6 +56,35 @@
     }
   }
 
+  .home-main-business {
+    .home-logo {
+      img {
+        width: 275px;
+      }
+    }
+    .home-search {
+      form {
+        border-radius: 10px;
+        margin: 0 20px;
+
+        i {
+          height: 35px;
+          padding: 10px;
+        }
+        input {
+          width: 150px;
+          height: 35px;
+          padding: 7px;
+        }
+        button {
+          height: 35px;
+          padding: 10px 15px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
   // footer
   .footer-business {
   }
