@@ -873,7 +873,7 @@ function homePage() {
 
   homeFormSubmit.addEventListener('submit', function (e) {
     e.preventDefault();
-    searchFilter = searchFieldHome.value;
+    searchFilter = searchFieldHome.value.trim().toLowerCase();
 
     console.log(searchFieldHome.value);
     console.log(searchFilter);
@@ -1147,6 +1147,13 @@ navLogoLink.addEventListener('click', function () {
   renderPage(`/`);
 })
 
+
+//business explorer btn event click
+const headerBusinessExplorerButton = document.querySelector(`.header-business-explorer`);
+headerBusinessExplorerButton.addEventListener('click', function () {
+  history.pushState(null, null, `/businesses-explorer`);
+  renderPage(`/businesses-explorer`);
+})
 
 
 
