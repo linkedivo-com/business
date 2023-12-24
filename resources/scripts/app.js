@@ -46,6 +46,7 @@ function navigate() {
 window.addEventListener("popstate", navigate);
 navigate();
 
+
 // read each business info from API
 async function fetchBusinessInformation() {
   let data;
@@ -400,8 +401,6 @@ function businessPageMaker() {
     mapIframe.setAttribute(`src`, businessInfo.contacts.googleMap);
   }
 
-  // console.log(businessInfo.moreInfo)
-
   // gallery
   Object.keys(businessInfo.gallery).forEach((key) => {
     gallery.innerHTML += `        
@@ -532,6 +531,8 @@ function businessNavMaker() {
     navMoreInfo.classList.add(`header-nav-selected`);
   });
 }
+
+
 
 // read  business explorer info from API
 async function fetchBusinessExplorer() {
